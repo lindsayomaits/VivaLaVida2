@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Viva la Vida FAQ</title>
+<meta name="description" content="Reilly Elementary PTA's guide to the Viva la Vida Parade & Festival, Saturday Oct 24, 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sansita:wght@700;800&family=Kalam:wght@700&family=Roboto+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF3E3;
+    --paper-2:#F6E9D0;
+    --ink:#2F2440;
+    --body:#3A3346;
+    --teal:#1C95A1;
+    --teal-dk:#137480;
+    --rose:#CF2F5A;
+    --rose-dk:#A61E45;
+    --gold:#F0A531;
+    --gold-dk:#C9811A;
+    --plum:#7A4C9E;
+    --plum-dk:#5E3780;
+    --frame:#3B2A4F;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--frame);
+    color:var(--body);
+    font-family:"Roboto Condensed",system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.5;
+  }
+  a{color:var(--teal-dk);font-weight:700}
+
+  /* Painted outer frame */
+  .frame{
+    max-width:680px;
+    margin:0 auto;
+    padding:8px;
+    background:
+      repeating-linear-gradient(45deg,var(--rose) 0 10px,var(--gold) 10px 20px,var(--teal) 20px 30px,var(--plum) 30px 40px);
+  }
+  .sheet{
+    background:var(--paper);
+    background-image:radial-gradient(rgba(160,120,60,.06) 1px,transparent 1px);
+    background-size:6px 6px;
+    border:3px solid var(--frame);
+    outline:2px solid var(--paper);
+    outline-offset:-8px;
+    padding:0 12px 20px;
+    overflow:hidden;
+  }
+
+  /* Papel picado */
+  .picado{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    gap:6px;
+    margin:0 -12px;
+    padding-top:10px;
+  }
+  .picado::before{
+    content:"";position:absolute;left:0;right:0;top:9px;height:2px;background:var(--frame);opacity:.55;
+  }
+  .picado svg{width:clamp(44px,15vw,92px);height:auto;flex:none;filter:drop-shadow(0 2px 0 rgba(0,0,0,.12))}
+
+  /* Header */
+  header{text-align:center;padding:14px 4px 6px;position:relative}
+  .presents{
+    font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    font-size:12px;color:var(--teal-dk);
+  }
+  h1{
+    font-family:"Sansita",Georgia,serif;font-weight:800;
+    color:var(--ink);
+    font-size:clamp(46px,14vw,82px);
+    line-height:.95;
+    margin-top:6px;
+    letter-spacing:-.01em;
+  }
+  .sub{
+    font-family:"Sansita",Georgia,serif;font-weight:700;
+    color:var(--ink);
+    font-size:clamp(24px,7vw,36px);
+    line-height:1.05;
+  }
+  .welcome{
+    font-family:"Kalam",cursive;color:var(--ink);
+    font-size:clamp(20px,6vw,28px);
+  }
+  .swirls{display:flex;justify-content:center;align-items:center;gap:6px;margin-top:2px}
+  .swirls svg{width:clamp(34px,11vw,56px);height:auto;flex:none}
+  .swirls svg:last-child{transform:scaleX(-1)}
+
+  .intro{
+    text-align:center;font-size:17px;color:var(--body);
+    margin:18px 2px 0;
+  }
+  .intro strong{color:var(--rose-dk)}
+
+  /* Quick facts */
+  .facts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:18px 0 0}
+  .fact{
+    border:2px solid currentColor;border-radius:4px;
+    padding:8px 6px;text-align:center;background:#fff9ee;
+  }
+  .fact b{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+  .fact span{display:block;color:var(--ink);font-weight:700;font-size:17px;line-height:1.2;margin-top:2px}
+  .fact.t{color:var(--teal-dk)} .fact.r{color:var(--rose-dk)} .fact.g{color:var(--gold-dk)} .fact.p{color:var(--plum-dk)}
+
+  /* Scalloped label (like flyer's sign-up tag) */
+  .tag{
+    margin:20px auto 0;max-width:460px;text-align:center;
+    background:#fff6e4;
+    border:2px dashed var(--gold-dk);
+    border-radius:26px;
+    padding:12px 16px;
+    box-shadow:0 0 0 5px #fff6e4, 0 0 0 7px var(--gold);
+  }
+  .tag small{display:block;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--rose-dk);font-size:12px}
+  .tag strong{display:block;font-family:"Kalam",cursive;color:var(--ink);font-size:22px;line-height:1.2;margin-top:2px}
+
+  /* Framed boxes */
+  .box{
+    position:relative;
+    margin:30px 4px 0;
+    background:#fffaf1;
+    border:4px solid var(--c);
+    padding:6px;
+  }
+  .box-in{
+    border:2px solid var(--c);
+    padding:16px 14px 14px;
+  }
+  .box.teal{--c:var(--teal);--cd:var(--teal-dk)}
+  .box.rose{--c:var(--rose);--cd:var(--rose-dk)}
+  .box.gold{--c:var(--gold);--cd:var(--gold-dk)}
+  .box.plum{--c:var(--plum);--cd:var(--plum-dk)}
+  .box h2{
+    font-family:"Kalam",cursive;font-weight:700;
+    color:var(--cd);text-align:center;
+    font-size:clamp(25px,7vw,34px);line-height:1.1;
+    padding:0 8px;
+  }
+  .box .lede{text-align:center;font-weight:700;color:var(--ink);margin-top:4px}
+  .corner{position:absolute;width:30px;height:30px;pointer-events:none;filter:drop-shadow(0 1px 0 rgba(0,0,0,.15))}
+  .corner.tl{top:-15px;left:-15px}
+  .corner.tr{top:-15px;right:-15px}
+  .corner.bl{bottom:-15px;left:-15px}
+  .corner.br{bottom:-15px;right:-15px}
+
+  /* Schedule */
+  .sched{list-style:none;margin-top:12px}
+  .sched li{padding:12px 0;border-top:2px dotted color-mix(in srgb,var(--c) 45%,transparent)}
+  .sched li:first-child{border-top:0}
+  .when{font-weight:700;color:var(--cd);font-size:17px}
+  .when b{color:var(--ink)}
+  .sched p{margin-top:2px}
+
+  /* FAQ */
+  .qa{padding:14px 0;border-top:2px dotted color-mix(in srgb,var(--c) 45%,transparent)}
+  .qa:first-of-type{border-top:0;padding-top:8px}
+  .qa h3{
+    font-weight:700;color:var(--cd);font-size:18px;line-height:1.3;margin-bottom:4px;
+  }
+  .qa p + p, .qa p + ul, .qa ul + p{margin-top:8px}
+  .qa strong{color:var(--ink)}
+  .qa ul{list-style:none}
+  .qa li{position:relative;padding-left:22px;margin-top:6px}
+  .qa li::before{
+    content:"";position:absolute;left:3px;top:.45em;width:10px;height:10px;border-radius:50%;
+    background:var(--gold);box-shadow:0 0 0 2px var(--rose) inset;
+  }
+  .lbl{font-weight:700;color:var(--cd)}
+
+  .crafts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+  .crafts a{
+    display:block;text-decoration:none;text-align:center;
+    border:2px solid var(--c);border-radius:4px;padding:10px 6px;
+    color:var(--ink);background:#fff;line-height:1.25;
+  }
+  .crafts a span{display:block;font-size:13px;color:var(--cd);margin-top:3px}
+
+  /* Sabías que */
+  .fact-card{padding:14px 0;border-top:2px dotted color-mix(in srgb,var(--c) 45%,transparent)}
+  .fact-card:first-of-type{border-top:0}
+  .fact-card h3{font-family:"Kalam",cursive;font-size:22px;line-height:1.2;color:var(--cd);margin-bottom:2px}
+
+  /* Footer band */
+  footer{margin-top:28px;text-align:center;position:relative}
+  .band{display:flex;justify-content:center;gap:4px;margin:0 -12px}
+  .band svg{width:clamp(40px,13vw,70px);height:auto}
+  .bye{
+    display:inline-block;margin-top:12px;
+    background:#fff6e4;border:2px dashed var(--rose);border-radius:26px;
+    box-shadow:0 0 0 5px #fff6e4,0 0 0 7px var(--rose);
+    padding:10px 20px;
+  }
+  .bye strong{display:block;font-family:"Kalam",cursive;font-size:26px;color:var(--ink);line-height:1.15}
+  .bye span{display:block;font-weight:700;color:var(--rose-dk)}
+
+  @media (min-width:600px){
+    .sheet{padding:0 26px 28px}
+    .picado,.band{margin:0 -26px}
+    .facts{grid-template-columns:repeat(4,1fr)}
+    .box-in{padding:20px 22px 18px}
+    .crafts{grid-template-columns:repeat(4,1fr)}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- papel picado flag: cut-out pattern masked from a colored rectangle -->
+    <mask id="cut">
+      <rect width="100" height="110" fill="#fff"/>
+      <path d="M50 30c-6-10-20-6-18 5 1 8 10 14 18 22 8-8 17-14 18-22 2-11-12-15-18-5z" fill="#000"/>
+      <path d="M50 64l7 9-7 9-7-9z" fill="#000"/>
+      <circle cx="20" cy="22" r="5" fill="#000"/><circle cx="80" cy="22" r="5" fill="#000"/>
+      <circle cx="20" cy="70" r="5" fill="#000"/><circle cx="80" cy="70" r="5" fill="#000"/>
+      <path d="M14 44h10l-5 8zM76 44h10l-5 8z" fill="#000"/>
+      <path d="M38 14h24v4H38z" fill="#000"/>
+      <path d="M30 88h4v6h-4zM44 88h4v6h-4zM58 88h4v6h-4zM72 88h4v6h-4zM16 88h4v6h-4z" fill="#000"/>
+    </mask>
+    <symbol id="flag" viewBox="0 0 100 110">
+      <path d="M0 0h100v100l-5 10-5-10-5 10-5-10-5 10-5-10-5 10-5-10-5 10-5-10-5 10-5-10-5 10-5-10-5 10-5-10-5 10-5-10-5 10L0 100z" mask="url(#cut)"/>
+    </symbol>
+    <!-- talavera flower -->
+    <symbol id="flower" viewBox="0 0 60 60">
+      <g fill="var(--fl,#CF2F5A)">
+        <ellipse cx="30" cy="14" rx="8" ry="12"/><ellipse cx="30" cy="46" rx="8" ry="12"/>
+        <ellipse cx="14" cy="30" rx="12" ry="8"/><ellipse cx="46" cy="30" rx="12" ry="8"/>
+        <ellipse cx="19" cy="19" rx="7" ry="10" transform="rotate(-45 19 19)"/>
+        <ellipse cx="41" cy="41" rx="7" ry="10" transform="rotate(-45 41 41)"/>
+        <ellipse cx="41" cy="19" rx="7" ry="10" transform="rotate(45 41 19)"/>
+        <ellipse cx="19" cy="41" rx="7" ry="10" transform="rotate(45 19 41)"/>
+      </g>
+      <circle cx="30" cy="30" r="9" fill="#F0A531"/>
+      <circle cx="30" cy="30" r="4" fill="#3B2A4F"/>
+    </symbol>
+    <!-- corner flourish -->
+    <symbol id="corner" viewBox="0 0 44 44">
+      <path d="M2 2h18c-6 2-10 6-11 12C8 8 6 5 2 2z" fill="var(--cc)"/>
+      <path d="M2 2v18c2-6 6-10 12-11C8 8 5 6 2 2z" fill="var(--cc)" opacity=".75"/>
+      <circle cx="16" cy="16" r="5" fill="#F0A531"/>
+      <circle cx="16" cy="16" r="2" fill="var(--cc)"/>
+    </symbol>
+    <!-- side swirl -->
+    <symbol id="swirl" viewBox="0 0 90 120">
+      <path d="M70 110C30 108 8 80 12 52 16 26 42 12 60 22c16 9 12 32-4 32-12 0-14-14-6-18" fill="none" stroke="#1C95A1" stroke-width="6" stroke-linecap="round"/>
+      <path d="M78 96c-18-2-34-12-38-30" fill="none" stroke="#F0A531" stroke-width="5" stroke-linecap="round"/>
+      <path d="M30 18c-8-12-2-16 8-14" fill="none" stroke="#CF2F5A" stroke-width="5" stroke-linecap="round"/>
+      <ellipse cx="22" cy="94" rx="10" ry="6" transform="rotate(-30 22 94)" fill="#CF2F5A"/>
+      <ellipse cx="44" cy="104" rx="9" ry="5" transform="rotate(10 44 104)" fill="#7A4C9E"/>
+      <circle cx="74" cy="16" r="6" fill="#7A4C9E"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="frame">
+<main class="sheet">
+
+  <div class="picado" aria-hidden="true">
+    <svg viewBox="0 0 100 110" style="color:#1C95A1"><use href="#flag" fill="#1C95A1"/></svg>
+    <svg viewBox="0 0 100 110"><use href="#flag" fill="#CF2F5A"/></svg>
+    <svg viewBox="0 0 100 110"><use href="#flag" fill="#F0A531"/></svg>
+    <svg viewBox="0 0 100 110"><use href="#flag" fill="#7A4C9E"/></svg>
+    <svg viewBox="0 0 100 110"><use href="#flag" fill="#1C95A1"/></svg>
+  </div>
+
+  <header>
+    <p class="presents">Reilly Elementary PTA presents</p>
+    <h1>Viva la Vida</h1>
+    <p class="sub">Parade &amp; Festival FAQ</p>
+    <div class="swirls">
+      <svg viewBox="0 0 90 120" aria-hidden="true"><use href="#swirl"/></svg>
+      <p class="welcome">Everyone is welcome</p>
+      <svg viewBox="0 0 90 120" aria-hidden="true"><use href="#swirl"/></svg>
+    </div>
+  </header>
+
+  <p class="intro">We are <strong>thrilled</strong> to announce that Reilly Elementary is officially part of Austin's Viva la Vida Parade and Festival! Everyone is welcome to walk in the parade with us as we join our Austin community in honoring Día de los Muertos, a beautiful tradition of remembering and celebrating the lives of loved ones who have passed. Come out, celebrate, and represent Reilly!</p>
+
+  <div class="facts">
+    <div class="fact r"><b>Date</b><span>Sat, Oct 24, 2026</span></div>
+    <div class="fact t"><b>Parade</b><span>12–1 PM</span></div>
+    <div class="fact p"><b>Festival</b><span>12–6 PM</span></div>
+    <div class="fact g"><b>Cost</b><span>100% Free</span></div>
+  </div>
+
+  <div class="tag">
+    <small>Walking with Reilly?</small>
+    <strong>Meet at 6th St &amp; Red River at 10:00 AM</strong>
+  </div>
+
+  <!-- DAY-OF SCHEDULE -->
+  <section class="box teal" style="--fl:#CF2F5A">
+    <svg class="corner tl" viewBox="0 0 60 60" aria-hidden="true"><use href="#flower"/></svg>
+    <svg class="corner tr" viewBox="0 0 60 60" aria-hidden="true"><use href="#flower"/></svg>
+    <svg class="corner bl" viewBox="0 0 60 60" aria-hidden="true"><use href="#flower"/></svg>
+    <svg class="corner br" viewBox="0 0 60 60" aria-hidden="true"><use href="#flower"/></svg>
+    <div class="box-in">
+      <h2>Day-of Schedule</h2>
+      <p class="lede">Saturday, October 24</p>
+      <ul class="sched">
+        <li><p class="when">9:00 AM · <b>Arrive downtown</b></p><p>Park or get dropped off, then head to the meeting spot. There's no assigned parking, and 6th Street will be blocked off, so plan drop-offs on 5th or 7th Street.</p></li>
+        <li><p class="when">10:00 AM · <b>Reilly meet-up</b></p><p>Find us at the corner of <strong>6th Street &amp; Red River Street</strong>. We'll hand out decorations for bikes, wagons and strollers. All minors must be with an adult.</p></li>
+        <li><p class="when">11:00 AM · <b>Group photo &amp; food</b></p><p>Smile for the Reilly group photo! Food for Reilly families comes shortly after.</p></li>
+        <li><p class="when">12:00 PM · <b>Parade begins!</b></p><p>We walk about ¾ mile west down Historic 6th Street. The procession lasts about an hour.</p></li>
+        <li><p class="when">1:00 PM · <b>Arrive &amp; offer our ofrenda</b></p><p>We reach the festival at the NW corner of Congress &amp; 4th Street (near Republic Square Park). Reilly families place our handmade crafts on the community altar as an ofrenda (offering). Then enjoy the festival until 6 PM!</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- GENERAL DETAILS -->
+  <section class="box rose" style="--fl:#1C95A1">
+    <svg class="corner tl" viewBox="0 0 60 60" aria-hidden="true"><use href="#flower"/></svg>
+    <svg class="corner tr" viewBox="0 0 60 60" aria-hidden="true"><use href="#flower"/></svg>
+    <svg class="corner bl" viewBox="0 0 60 60" aria-hidden="true"><use href="#flower"/></svg>
+    <svg class="corner br" viewBox="0 0 60 60" aria-hidden="true"><use href="#flower"/></svg>
+    <div class="box-in">
+      <h2>General Event Details</h2>
+
+      <div class="qa">
+        <h3>What is the Viva la Vida Festival?</h3>
+        <p>Hosted by the Mexic-Arte Museum, it is Austin's largest and longest-running Día de los Muertos (Day of the Dead) event. This year marks the <strong>43rd annual</strong> Viva la Vida Festival &amp; Parade!</p>
+      </div>
+      <div class="qa">
+        <h3>When is the event?</h3>
+        <p><strong>Saturday, October 24, 2026.</strong> The grand procession (parade) kicks off at 12:00 PM and runs until 1:00 PM. The main street festival runs from 12:00 PM to 6:00 PM. If you want to walk with Reilly, meet us at <strong>6th Street &amp; Red River Street at 10:00 AM</strong>. See the full Day-of Schedule above!</p>
+      </div>
+      <div class="qa">
+        <h3>Where is the festival located?</h3>
+        <p>Downtown Austin! The parade lines up near 6th &amp; Red River and travels about ¾ mile west down Historic 6th Street to the main festival grounds at 4th Street and Congress Avenue (near Republic Square Park).</p>
+      </div>
+      <div class="qa">
+        <h3>How much does it cost?</h3>
+        <p>Nada! Admission to the festival and participation in the parade is completely free and open to all ages.</p>
+      </div>
+      <div class="qa">
+        <h3>Where should we park?</h3>
+        <p>There is no assigned parking for parade participants, and downtown parking fills quickly. Give yourself the 9:00 hour to park or get dropped off. Here are some options:</p>
+        <ul>
+          <li><span class="lbl">City Garages:</span> Austin Convention Center, City Hall Garage, One Texas Center, Palmer Events Center, and RiverSouth.</li>
+          <li><span class="lbl">Discounted Parking:</span> Mexic-Arte Museum offers special discounted parking ($10 for 4 hours) at the Frost Bank Tower Garage.</li>
+          <li><span class="lbl">Drop-off Tip:</span> 6th Street will be blocked off! Parade organizers recommend dropping people off on 5th or 7th Street and walking to the staging area.</li>
+          <li><span class="lbl">Public Transit:</span> Capital Metro buses and rideshares are highly recommended. CapMetro buses drop off near 4th Street and Congress Avenue, and transit centers like South Congress or Tech Ridge Park &amp; Ride offer easy bus access.</li>
+        </ul>
+      </div>
+      <div class="qa">
+        <h3>What happens if it rains?</h3>
+        <p>We'll communicate if it's cancelled, but you can also keep up on the <a href="https://mexic-artemuseum.org/event/43rd-annual-viva-la-vida-festival-parade/" target="_blank" rel="noopener">Mexic-Arte Museum event page</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WALKING WITH REILLY -->
+  <section class="box teal" style="--fl:#CF2F5A">
+    <svg class="corner tl" viewBox="0 0 60 60" aria-hidden="true"><use href="#flower"/></svg>
+    <svg class="corner tr" viewBox="0 0 60 60" aria-hidden="true"><use href="#flower"/></svg>
+    <svg class="corner bl" viewBox="0 0 60 60" aria-hidden="true"><use href="#flower"/></svg>
+    <svg class="corner br" viewBox="0 0 60 60" aria-hidden="true"><use href="#flower"/></svg>
+    <div class="box-in">
+      <h2>Walking with Reilly</h2>
+
+      <div class="qa">
+        <h3>Can everybody participate?</h3>
+        <p>Yes! Every Reilly family is welcome and encouraged to walk with us in the parade.</p>
+      </div>
+      <div class="qa">
+        <h3>Can we just show up?</h3>
+        <p>Absolutely! You can just show up on the day of the event to walk with us.</p>
+      </div>
+      <div class="qa">
+        <h3>What is the exact meeting location and time for Reilly participants?</h3>
+        <p>Meet us at the corner of <strong>6th Street &amp; Red River Street at 10:00 AM</strong>. Look for the Reilly crew! We'll take a group photo at 11:00 AM, so don't be late!</p>
+      </div>
+      <div class="qa">
+        <h3>Can we bring wagons or strollers?</h3>
+        <p>Absolutely! At the 10:00 AM meet-up we'll hand out decorations for bikes, wagons, strollers and more, so come a little early to deck them out.</p>
+      </div>
+      <div class="qa">
+        <h3>Is childcare provided? (Can I drop my kid off?)</h3>
+        <p><strong>No. All minors must be with an adult.</strong> Parents and guardians are entirely responsible for their children and must stay with their kids the whole time. This is a family-participation event, not a drop-off childcare service.</p>
+      </div>
+      <div class="qa">
+        <h3>What should we wear?</h3>
+        <p>We encourage everybody to wear a <strong>Reilly Elementary shirt</strong>! You can also come in Día de los Muertos face paint to match the spirit of the event. Our theme is <strong>Keep Austin Weird</strong>, so you have full creative license!</p>
+      </div>
+      <div class="qa">
+        <h3>What should we bring?</h3>
+        <ul>
+          <li><span class="lbl">Smiles!</span> Bring your best Reilly spirit.</li>
+          <li>A stroller or wagon, if you wish.</li>
+          <li>Food, snacks &amp; water you may need.</li>
+          <li>Ear protection, if you wish. The parade gets quite loud!</li>
+          <li>Your costume and/or costume makeup.</li>
+          <li>Comfy shoes for the ¾-mile route.</li>
+          <li>Weather protection: sunscreen and hats for sun, or rain gear if showers are in the forecast.</li>
+        </ul>
+      </div>
+      <div class="qa">
+        <h3>Should families bring their own water and snacks?</h3>
+        <p>We'll share food with Reilly families right after our 11:00 AM group photo, but please bring water and any food you may want. The festival has food vendors as well.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREPARING -->
+  <section class="box rose" style="--fl:#1C95A1">
+    <svg class="corner tl" viewBox="0 0 60 60" aria-hidden="true"><use href="#flower"/></svg>
+    <svg class="corner tr" viewBox="0 0 60 60" aria-hidden="true"><use href="#flower"/></svg>
+    <svg class="corner bl" viewBox="0 0 60 60" aria-hidden="true"><use href="#flower"/></svg>
+    <svg class="corner br" viewBox="0 0 60 60" aria-hidden="true"><use href="#flower"/></svg>
+    <div class="box-in">
+      <h2>Craft Day &amp; Preparing</h2>
+      <p class="lede">Help us make decorations and parade crafts!</p>
+
+      <div class="qa">
+        <h3>Will there be pre-event activities for the kids?</h3>
+        <p>Yes! We will have a craft table set up during the teacher conference day:</p>
+        <ul>
+          <li><span class="lbl">Date:</span> <strong>Monday, October 12</strong></li>
+          <li><span class="lbl">Time:</span> <strong>10:00 AM to 2:00 PM</strong></li>
+        </ul>
+        <p>Kids can come make fun crafts and accessories to wear for the festival, plus special pieces for the community ofrenda that we'll place on the altar at the end of the parade!</p>
+      </div>
+      <div class="qa">
+        <h3>How can I help before the event?</h3>
+        <p>We need you! Support the PTA by donating art supplies to help us prepare our parade decorations and festival crafts.</p>
+      </div>
+      <div class="qa">
+        <h3>What art supplies are you looking for?</h3>
+        <p>Tissue paper, streamers, pipe cleaners, paint, etc.</p>
+      </div>
+      <div class="qa">
+        <h3>Where can we drop off donated supplies?</h3>
+        <p>Deliver them to <strong>Mr. James</strong>, the Reilly Art teacher.</p>
+      </div>
+      <div class="qa">
+        <h3>Can we make crafts at home?</h3>
+        <p>For sure! Here are some ideas:</p>
+        <div class="crafts">
+          <a href="https://www.youtube.com/watch?v=C-05DzigmCg" target="_blank" rel="noopener">Tissue Paper Marigolds<span>Watch the video →</span></a>
+          <a href="https://www.youtube.com/watch?v=K9lYizPO7gM" target="_blank" rel="noopener">Papel Picado<span>Watch the video →</span></a>
+          <a href="https://www.youtube.com/watch?v=VlV73NpUDeE" target="_blank" rel="noopener">Paper Plate Masks<span>Watch the video →</span></a>
+          <a href="https://www.youtube.com/watch?v=_q7g1B2c8c8" target="_blank" rel="noopener">Build an Ofrenda<span>Watch the video →</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SABIAS QUE -->
+  <section class="box plum" style="--fl:#F0A531">
+    <svg class="corner tl" viewBox="0 0 60 60" aria-hidden="true"><use href="#flower"/></svg>
+    <svg class="corner tr" viewBox="0 0 60 60" aria-hidden="true"><use href="#flower"/></svg>
+    <svg class="corner bl" viewBox="0 0 60 60" aria-hidden="true"><use href="#flower"/></svg>
+    <svg class="corner br" viewBox="0 0 60 60" aria-hidden="true"><use href="#flower"/></svg>
+    <div class="box-in">
+      <h2>¿Sabías Que?</h2>
+      <p class="lede">Did you know? Cool cultural nuggets to share with your kids on the way downtown!</p>
+
+      <div class="fact-card">
+        <h3>This year's theme: La Ofrenda</h3>
+        <p>An ofrenda is an altar families build to welcome loved ones' spirits home, with photos, candles and their favorite foods. In this year's parade, artist-made altar pieces are carried down 6th Street and assembled into one giant altar at the festival!</p>
+      </div>
+      <div class="fact-card">
+        <h3>Flowers that light the way</h3>
+        <p>Orange marigolds, called cempasúchil, are the signature flower of the holiday. Their bright color and strong scent are said to guide spirits back to their families.</p>
+      </div>
+      <div class="fact-card">
+        <h3>Happy skulls, not spooky ones</h3>
+        <p>Smiling calaveras (decorated skulls) celebrate life instead of fearing death. The elegant skeleton lady, La Catrina, was first drawn over 100 years ago by Mexican artist José Guadalupe Posada.</p>
+      </div>
+      <div class="fact-card">
+        <h3>Papel picado</h3>
+        <p>These colorful cut-paper banners flutter in the breeze, and their delicate paper is a reminder of how precious and fragile life is.</p>
+      </div>
+      <div class="fact-card">
+        <h3>Two days of remembering</h3>
+        <p>Día de los Muertos is celebrated November 1 and 2. It blends ancient Indigenous traditions from Mexico with Catholic holidays. Families often share pan de muerto, a sweet bread decorated with "bones" made of dough.</p>
+      </div>
+      <div class="fact-card">
+        <h3>Don't miss at the festival</h3>
+        <p>Bouncing low-rider cars, live music and dance, hands-on art activities, and the Muertos Mercado with 20+ vendors selling Day of the Dead crafts and gifts.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="band" aria-hidden="true">
+      <svg viewBox="0 0 60 60" style="--fl:#CF2F5A"><use href="#flower"/></svg>
+      <svg viewBox="0 0 60 60" style="--fl:#1C95A1"><use href="#flower"/></svg>
+      <svg viewBox="0 0 60 60" style="--fl:#7A4C9E"><use href="#flower"/></svg>
+      <svg viewBox="0 0 60 60" style="--fl:#F0A531"><use href="#flower"/></svg>
+      <svg viewBox="0 0 60 60" style="--fl:#CF2F5A"><use href="#flower"/></svg>
+    </div>
+    <div class="bye">
+      <strong>¡Nos vemos en el desfile!</strong>
+      <span>See you at the parade, Reilly familia!</span>
+    </div>
+  </footer>
+
+</main>
+</div>
+</body>
+</html>
