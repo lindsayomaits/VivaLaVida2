@@ -101,6 +101,13 @@
   .crafts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
   .crafts a{display:block;text-decoration:none;text-align:center;border:2px solid var(--c);border-radius:4px;padding:10px 6px;color:var(--ink);background:#fff;line-height:1.25;box-shadow:inset 0 0 0 3px #fff,inset 0 0 0 4px color-mix(in srgb,var(--c) 40%,transparent)}
   .crafts a span{display:block;font-size:13px;color:var(--cd);margin-top:3px}
+  .crafts .craft{text-align:center;border:2px solid var(--c);border-radius:4px;padding:10px 6px;color:var(--ink);background:#fff;line-height:1.25;box-shadow:inset 0 0 0 3px #fff,inset 0 0 0 4px color-mix(in srgb,var(--c) 40%,transparent)}
+  .crafts .craft b{display:block}
+  .crafts .craft a{display:block;font-size:13px;font-weight:700;color:var(--cd);margin-top:3px;text-decoration:none;border:0;box-shadow:none;background:none;padding:0;border-radius:0}
+  .btn{display:inline-block;background:var(--rose);color:#fff;text-decoration:none;font-weight:700;border-radius:999px;padding:10px 18px;box-shadow:0 0 0 3px #FFFAF1,0 0 0 5px var(--gold)}
+  .transit{background:#EAF6F4;border:2px dashed var(--teal);border-radius:8px;padding:14px 12px !important;margin:6px 0}
+  .transit h3{color:var(--teal-dk)}
+  .transit .lbl{color:var(--teal-dk)}
 
   .fact-card{padding:14px 0;border-top:2px dotted color-mix(in srgb,var(--c) 45%,transparent)}
   .fact-card:first-of-type{border-top:0}
@@ -241,6 +248,16 @@
         <h3>How much does it cost?</h3>
         <p>Nada! Admission to the festival and participation in the parade is completely free and open to all ages.</p>
       </div>
+      <div class="qa transit">
+        <h3>Can we take public transportation? (Please do!)</h3>
+        <p><strong>We strongly encourage it!</strong> Downtown parking fills up fast and 6th Street will be closed for the parade, so taking the train or bus is the easiest, least stressful way to get there.</p>
+        <ul>
+          <li><span class="lbl">MetroRail:</span> The Downtown Station at 4th St &amp; Trinity St is a short walk from our 6th &amp; Red River meet-up.</li>
+          <li><span class="lbl">CapMetro buses:</span> Many routes stop downtown near Congress Avenue. Park &amp; Ride lots like Tech Ridge or South Congress let you park outside downtown and ride in.</li>
+          <li><span class="lbl">Rideshare or drop-off:</span> Ask to be dropped on 5th or 7th Street, since 6th Street will be blocked off.</li>
+          <li><span class="lbl">Plan your trip:</span> Find routes and times on the <a href="https://www.capmetro.org/" target="_blank" rel="noopener">CapMetro website</a> or the CapMetro app.</li>
+        </ul>
+      </div>
       <div class="qa">
         <h3>Where should we park?</h3>
         <p>There is no assigned parking for parade participants, and downtown parking fills quickly. Give yourself the 9:00 hour to park or get dropped off. Here are some options:</p>
@@ -272,7 +289,8 @@
       </div>
       <div class="qa">
         <h3>Can we just show up?</h3>
-        <p>Absolutely! You can just show up on the day of the event to walk with us.</p>
+        <p>Yes! But please <strong>fill out our sign-up sheet first</strong>. Siblings, extended family, friends and neighbors are all welcome to walk with us, but <strong>everyone who joins needs to be on the sheet</strong>, so add each person in your group.</p>
+        <p><a class="btn" href="https://docs.google.com/forms/d/1u43v7gBO92FA5SeoV1s-w8Rm-5QezAhd7nkAov2plzs/viewform" target="_blank" rel="noopener">Sign up to walk with Reilly →</a></p>
       </div>
       <div class="qa">
         <h3>What is the exact meeting location and time for Reilly participants?</h3>
@@ -337,7 +355,7 @@
       </div>
       <div class="qa">
         <h3>Where can we drop off donated supplies?</h3>
-        <p>Deliver them to <strong>Mr. James</strong>, the Reilly Art teacher.</p>
+        <p>Drop them off with <strong>Miss Sandy at the front desk</strong>.</p>
       </div>
       <div class="qa">
         <h3>Can we make crafts at home?</h3>
@@ -346,7 +364,7 @@
           <a href="https://www.youtube.com/watch?v=C-05DzigmCg" target="_blank" rel="noopener">Tissue Paper Marigolds<span>Watch the video →</span></a>
           <a href="https://www.youtube.com/watch?v=K9lYizPO7gM" target="_blank" rel="noopener">Papel Picado<span>Watch the video →</span></a>
           <a href="https://www.youtube.com/watch?v=VlV73NpUDeE" target="_blank" rel="noopener">Paper Plate Masks<span>Watch the video →</span></a>
-          <a href="https://www.youtube.com/watch?v=_q7g1B2c8c8" target="_blank" rel="noopener">Build an Ofrenda<span>Watch the video →</span></a>
+          <div class="craft"><b>Paper Horse Head</b><a href="https://www.youtube.com/watch?v=gAAYxceJpSo" target="_blank" rel="noopener">Watch the video →</a><a href="https://drive.google.com/drive/folders/1gXtrFaKpCZwzY__B5G14lM39pgPgDdiN?usp=drive_link" target="_blank" rel="noopener">Instructions →</a></div>
         </div>
       </div>
     </div>
